@@ -1,0 +1,25 @@
+models:
+  - name: stg_subcategory
+    description: " staging model for subcategory"
+    columns:
+      - name: subcategory_id
+        description: " primary key for subcategory"
+        data_tests:
+          - not_null
+          - unique
+      - name: subcategory_name
+        description: " subcategory name "
+        data_tests:
+          - not_null
+      - name: category_id
+        description: " foreign key to stg_category"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_category')
+                field: category_id
+
+
+
+

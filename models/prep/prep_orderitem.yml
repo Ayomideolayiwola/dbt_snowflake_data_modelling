@@ -1,0 +1,14 @@
+models:
+  - name: prep_orderitem
+    description:
+    columns:
+       - name: orderitem_id
+       - name: order_id
+       - name: product_id
+       - name: quantity
+       - name: supplier_id
+       - name: subtotal
+       - name: discount
+
+
+

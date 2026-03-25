@@ -1,0 +1,51 @@
+models:
+  - name: stg_customer_product_rating
+    description: " staging model for customer product rating"
+    columns: 
+      - name: customerproductrating_id
+        description: "primary key for customer product rating"
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "foreign key to customer table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customer')
+                field: customer_id
+      - name: product_id
+        description: "foreign key to product table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+      - name: ratings
+        description: "product rating"
+        data_tests:
+          - not_null
+      - name: review
+        description: "review about the product"
+        data_tests:
+          - not_null
+      - name: sentiment
+        description: "other observation about the product"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['good', 'bad']
+
+
+      
+
+
+
+
+
+
+
+

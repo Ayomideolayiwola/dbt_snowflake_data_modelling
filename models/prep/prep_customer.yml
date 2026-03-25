@@ -1,0 +1,11 @@
+models:
+  - name: prep_customer
+    description:
+    columns:
+       - name: customer_id
+       - name: first_name
+       - name: last_name
+       - name: full_name
+       - name: email
+       - name: country
+

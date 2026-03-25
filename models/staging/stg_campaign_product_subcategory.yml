@@ -1,0 +1,32 @@
+models:
+  - name: stg_campaign_product_subcategory
+    description: "staging model for campaign product subcategories"
+    columns:
+      - name: campaign_product_subcategory_id
+        description: "Primary key for campaign product subcategories"
+        data_tests:
+          - not_null
+          - unique
+      - name: campaign_id
+        description: "foreign key,for stg marketing campaign"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_marketing_campaigns')
+                field: campaign_id
+      - name: subcategory_id
+        description: "foreign key to subcategory "
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_subcategory')
+                field: subcategory_id
+      - name: discount
+        description: "percentage discount"
+        data_tests:
+          - not_null
+        
+
+        

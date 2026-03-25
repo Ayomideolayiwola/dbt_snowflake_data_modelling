@@ -1,0 +1,11 @@
+models:
+  - name: prep_returns
+    description:
+    columns:
+       - name: return_id
+       - name: order_id
+       - name: product_id
+       - name: return_date
+       - name: reason
+       - name: amount_refunded
+

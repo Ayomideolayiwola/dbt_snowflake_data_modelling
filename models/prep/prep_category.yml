@@ -1,0 +1,7 @@
+models:
+  - name: prep_category
+    description:
+    columns:
+       - name: category_id
+       - name: category_name
+      

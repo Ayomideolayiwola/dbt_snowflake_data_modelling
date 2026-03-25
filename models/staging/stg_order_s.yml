@@ -1,0 +1,50 @@
+models:
+  - name: stg_order_s
+    description: "staging model for orders"
+    columns:
+      - name: order_id_surrogate 
+        description: " surrogate primary key for orders "
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id 
+        description: "original key for orders"
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "foreign key to customer"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customer')
+                field: customer_id
+      - name: order_date
+        description: "date the order was placed"
+        data_tests:
+          - not_null
+      - name: campaign_id
+        description: "foreign key to campaign"
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_marketing_campaigns')
+                field: campaign_id
+      - name: amount
+        description: "total amount in cents"
+        data_tests:
+          - not_null
+      - name: payment_method_id
+        description: "foreign key to payment_method"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_payment_method')
+                field: payment_method_id
+
+
+
+
+

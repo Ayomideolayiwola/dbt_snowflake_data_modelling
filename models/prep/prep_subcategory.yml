@@ -1,0 +1,10 @@
+models:
+  - name: prep_subcategory
+    description:
+    columns:
+       - name: subcategory_id
+       - name: subcategory_name
+       - name: category_id
+
+    
+

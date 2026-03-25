@@ -1,0 +1,13 @@
+models:
+  - name: stg_payment_method
+    description: "staging model for payment method"
+    columns:
+      - name: payment_method_id
+        description: "primary key for payment method "
+        data_tests:
+          - not_null
+          - unique
+      - name: payment_method
+        description: "payment method types"
+        data_tests:
+          - not_null

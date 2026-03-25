@@ -1,0 +1,8 @@
+models:
+  - name: prep_payment_method
+    description:
+    columns:
+       - name: payment_method_id
+       - name: payment_method
+
+

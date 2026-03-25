@@ -1,0 +1,9 @@
+models:
+  - name: prep_supplier_s
+    description:
+    columns:
+       - name: supplier_id,
+       - name: supplier_name
+       - name: email
+
+       

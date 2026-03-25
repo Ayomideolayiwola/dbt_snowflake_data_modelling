@@ -1,0 +1,9 @@
+models:
+  - name: prep_customer_product_rating
+    description:
+    columns:
+       - name: customerproductrating_id
+       - name: customer_id
+       - name: ratings
+       - name: review
+       - name: sentiment

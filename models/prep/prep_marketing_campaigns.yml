@@ -1,0 +1,8 @@
+models:
+  - name: prep_marketing_campaigns
+    description:
+    columns:
+       - name: campaign_id
+       - name: campaign_name
+       - name: offer_week
+       

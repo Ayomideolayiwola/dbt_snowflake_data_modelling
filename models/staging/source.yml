@@ -1,0 +1,21 @@
+# models/sources.yml
+version: 2
+
+sources:
+  - name: sales_data                       
+    database: RAW_BUSINESS_DATA                
+    schema: TRANSACTIONAL_DATA_OUTPUT               
+    tables:
+      - name: campaign_product_subcategory
+      - name: category                
+      - name: customer
+      - name: customer_product_rating
+      - name: marketing_campaigns
+      - name: orderitem
+      - name: payment_method
+      - name: product
+      - name: returns
+      - name: subcategory
+      - name: supplier_s
+      - name: order_s
+

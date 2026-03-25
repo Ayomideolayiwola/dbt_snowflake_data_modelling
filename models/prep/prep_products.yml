@@ -1,0 +1,10 @@
+models:
+  - name: prep_products
+    description:
+    columns:
+       - name: product_id
+       - name: name
+       - name: price
+       - name: subcategory_id
+      
+

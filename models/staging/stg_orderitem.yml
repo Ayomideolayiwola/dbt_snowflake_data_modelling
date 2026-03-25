@@ -1,0 +1,48 @@
+models:
+  - name: stg_orderitem
+    description: "staging model of order items "
+    columns:
+      - name: orderitem_id
+        description: "primary key of order_items"
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "foreign key to stg_orders"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_order_s')
+                field: order_id
+      - name: product_id
+        description: "foreign key to stg_products"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+      - name: quantity
+        description: "quantity of the items"
+        data_tests:
+          - not_null
+      - name: supplier_id
+        description: "foreign key to suppliers"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_supplier_s')
+                field: supplier_id
+      - name: subtotal
+        description: "subtotal of the order items"
+        data_tests:
+          - not_null
+      - name: discount
+        description: " discount percentage given on the order items"
+        data_tests:
+          - not_null
+
+
+

@@ -1,0 +1,22 @@
+models:
+  - name: stg_marketing_campaigns
+    description: "staging model for marketing campaigns"
+    columns:
+      - name: campaign_id
+        description: " primary key for marketing campaign"
+        data_tests:
+          - not_null
+          - unique
+      - name: campaign_name 
+        description: " campaign name"
+        data_tests:
+          - not_null
+      - name: offer_week 
+        description: " week the campaign was offered"
+        data_tests:
+          - not_null
+  
+
+
+
+

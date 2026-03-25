@@ -1,0 +1,10 @@
+models:
+  - name: prep_campaign_product_subcategory
+    description:
+    columns:
+       - name: campaign_product_subcategory_id
+       - name: campaign_id
+       - name: subcategory_id
+       - name: discount
+
+      

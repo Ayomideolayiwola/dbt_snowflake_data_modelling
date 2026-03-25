@@ -1,0 +1,31 @@
+models:
+ - name: stg_customer
+   description:
+   columns:
+    - name: customer_id
+      description: " primary key to customer_id "
+      data_tests:
+        - not_null
+        - unique
+    - name: first_name
+      description: " first name of the customer"
+      data_tests:
+        - not_null
+    - name: last_name
+      description: " last name of the customer "
+      data_tests:
+        - not_null
+    - name: email
+      description: " unique emails of each customer"
+      data_tests:
+        - not_null
+        - unique
+    - name: country 
+      description: "country where the customer resides"
+      data_tests:
+        - not_null
+      
+
+
+
+

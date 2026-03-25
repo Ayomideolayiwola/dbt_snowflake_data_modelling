@@ -1,0 +1,21 @@
+models:
+  - name: stg_supplier_s
+    description: " staging model for suppliers"
+    columns:
+      - name: supplier_id
+        description: "primary key for suppliers"
+        data_tests:
+          - not_null
+          - unique
+      - name: supplier_name
+        description: " name of the supplier "
+        data_tests: 
+          - not_null
+      - name: email
+        description: "email address of the suppliers"
+        data_tests:
+          - not_null
+          - unique
+
+
+

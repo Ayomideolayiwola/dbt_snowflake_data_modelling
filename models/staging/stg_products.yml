@@ -1,0 +1,30 @@
+models:
+  - name: stg_products
+    description: "staging model for products"
+    columns:
+      - name: product_id
+        description: "primary key for products"
+        data_tests:
+          - not_null
+          - unique
+      - name: name
+        description: "name of the products"
+        data_tests:
+          - not_null
+      - name: price
+        description: "price of the products"
+        data_tests:
+          - not_null
+      - name: description
+        description: "description about the products"
+        data_tests:
+          - not_null
+      - name: subcategory_id
+        description: "foreign key for subcategory"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_subcategory')
+                field: subcategory_id
+

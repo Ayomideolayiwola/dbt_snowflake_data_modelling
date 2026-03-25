@@ -1,0 +1,14 @@
+models:
+  - name: prep_order_s
+    description:
+    columns:
+       - name: order_id_surrogate
+       - name: order_id
+       - name: customer_id
+       - name: order_date
+       - name: campaign_id
+       - name: amount
+       - name: payment_method_id
+
+      
+
