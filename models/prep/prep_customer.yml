@@ -1,11 +1,19 @@
 models:
   - name: prep_customer
-    description:
+    description: " referencing staging customers "
     columns:
-       - name: customer_id
-       - name: first_name
-       - name: last_name
-       - name: full_name
-       - name: email
-       - name: country
+      - name: customer_id
+        description: "primary key of the table "
+        data_tests:
+          - not_null
+          - unique
+      - name: first_name
+      - name: last_name
+      - name: full_name
+      - name: email
+        description: "email of the customers "
+        data_tests:
+          - not_null
+          - unique
+      - name: country
 

@@ -1,8 +1,12 @@
 models:
   - name: prep_payment_method
-    description:
+    description: " referencing staging payment method"
     columns:
-       - name: payment_method_id
-       - name: payment_method
+      - name: payment_method_id
+        description: " primary key to the table "
+        data_tests:
+          - not_null
+          - unique
+      - name: payment_method
 
 

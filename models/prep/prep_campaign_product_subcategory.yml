@@ -1,10 +1,28 @@
 models:
   - name: prep_campaign_product_subcategory
-    description:
+    description: "referencing staging campaigh=n product subcategory"
     columns:
-       - name: campaign_product_subcategory_id
-       - name: campaign_id
-       - name: subcategory_id
-       - name: discount
+      - name: campaign_product_subcategory_id
+        description: "primary key for the table"
+        data_tests:
+          - not_null
+          - unique
+      - name: campaign_id
+        description: "foreign key to prep marketing campaign table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_marketing_campaigns')
+                field: campaign_id
+      - name: subcategory_id
+        description: "foreign key to subcategory table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_subcategory')
+                field: subcategory_id
+      - name: discount
 
       

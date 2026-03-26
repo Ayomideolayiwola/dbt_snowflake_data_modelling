@@ -1,7 +1,11 @@
 models:
   - name: prep_category
-    description:
+    description: "referencing staging category table"
     columns:
-       - name: category_id
-       - name: category_name
+      - name: category_id
+        description: "primary key to the table"
+        data_tests:
+          - not_null
+          - unique
+      - name: category_name
       

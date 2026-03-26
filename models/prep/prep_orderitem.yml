@@ -1,14 +1,39 @@
 models:
   - name: prep_orderitem
-    description:
+    description: " referencing staging orderitems"
     columns:
-       - name: orderitem_id
-       - name: order_id
-       - name: product_id
-       - name: quantity
-       - name: supplier_id
-       - name: subtotal
-       - name: discount
+      - name: orderitem_id
+        description: " primaty key of the table"
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "foreign key to order_s table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_order_s')
+                field: order_id
+      - name: product_id
+        description: " foreign key to prep products table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_products')
+                field: product_id
+      - name: quantity
+      - name: supplier_id
+        description: " foreign key to prep supplier_s "
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_supplier_s')
+                field: supplier_id
+      - name: subtotal
+      - name: discount
 
 
 

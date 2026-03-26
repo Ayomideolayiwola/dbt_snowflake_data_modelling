@@ -1,9 +1,17 @@
 models:
   - name: prep_supplier_s
-    description:
+    description: " referencing staging supplier_s"
     columns:
-       - name: supplier_id,
-       - name: supplier_name
-       - name: email
+      - name: supplier_id
+        description: " primary key of the table "
+        data_tests:
+          - not_null
+          - unique
+      - name: supplier_name
+      - name: email
+        description: " email of the supplier  "
+        data_tests:
+          - not_null
+          - unique
 
        

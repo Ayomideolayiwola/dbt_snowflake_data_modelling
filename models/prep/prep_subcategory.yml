@@ -1,10 +1,14 @@
 models:
   - name: prep_subcategory
-    description:
+    description: " referencing staging subcategory"
     columns:
-       - name: subcategory_id
-       - name: subcategory_name
-       - name: category_id
+      - name: subcategory_id
+        description: " primary key to the table"
+        data_tests:
+          - not_null
+          - unique
+      - name: subcategory_name
+      - name: category_id
 
     
 

@@ -1,11 +1,29 @@
 models:
   - name: prep_returns
-    description:
+    description: " referencing staging returns"
     columns:
-       - name: return_id
-       - name: order_id
-       - name: product_id
-       - name: return_date
-       - name: reason
-       - name: amount_refunded
+      - name: return_id
+        description: " primary key to the table "
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: " foreign key to prep order_s"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_order_s')
+                field: order_id
+      - name: product_id
+        description: " foreign key to prep product"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_products')
+                field: product_id
+      - name: return_date
+      - name: reason
+      - name: amount_refunded
 

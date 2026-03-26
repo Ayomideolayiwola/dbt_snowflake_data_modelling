@@ -2,9 +2,19 @@ models:
   - name: prep_products
     description:
     columns:
-       - name: product_id
-       - name: name
-       - name: price
-       - name: subcategory_id
-      
+      - name: product_id
+        description: " primary key to the table "
+        data_tests:
+          - not_null
+          - unique
+      - name: name
+      - name: price
+      - name: subcategory_id
+        description: " foreign key to prep subcategory"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_subcategory')
+                field: subcategory_id
 

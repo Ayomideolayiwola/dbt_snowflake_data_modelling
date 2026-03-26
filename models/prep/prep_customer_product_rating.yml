@@ -1,9 +1,37 @@
 models:
   - name: prep_customer_product_rating
-    description:
+    description: "referencing staging customer prodcut rating "
     columns:
-       - name: customerproductrating_id
-       - name: customer_id
-       - name: ratings
-       - name: review
-       - name: sentiment
+      - name: customerproductrating_id
+        description: "primary key for the table"
+        data_tests:
+          - not_null 
+          - unique
+      - name: customer_id
+        description: "foreign key for prep customer table"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('prep_customer')
+                field: customer_id
+      - name: product_id
+        description: " foreign key to prep product "
+        data_tests:
+          - not_null 
+          - relationships:
+              arguments: 
+                to: ref('prep_products')   
+                field: product_id      
+      - name: ratings
+        description: " rating of the product"
+        data_tests:
+          - not_null
+      - name: review
+      - name: sentiment
+        description: "what the customer has to say about the products"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [ 'good', 'bad']

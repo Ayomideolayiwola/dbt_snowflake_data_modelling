@@ -1,8 +1,12 @@
 models:
   - name: prep_marketing_campaigns
-    description:
+    description: " referencing staging marketing campaigns"
     columns:
-       - name: campaign_id
-       - name: campaign_name
-       - name: offer_week
+      - name: campaign_id
+        description: "primary key to the table "
+        data_tests:
+          - not_null 
+          - unique
+      - name: campaign_name
+      - name: offer_week
        
