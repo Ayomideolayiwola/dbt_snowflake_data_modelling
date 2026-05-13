@@ -1,4 +1,6 @@
-Algora Sales — dbt Analytics Engineering Project
+#Algora Sales — dbt Analytics Engineering Project
+
+
 A dbt project that transforms raw transactional data in Snowflake into clean, analytics-ready models used by business stakeholders and connected to Looker Studio dashboards.
 
 Table of Contents
